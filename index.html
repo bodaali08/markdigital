@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Digital - Portfolio & Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #3b82f6;
+            --dark-bg: #020617;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            font-family: 'Noto Sans Arabic', sans-serif;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+
+        /* Header & Logo */
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, #0f172a, var(--dark-bg));
+        }
+
+        .logo-container img {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span { color: var(--primary-blue); }
+
+        /* Sections Styling */
+        section {
+            padding: 80px 10% 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h2.section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            border-right: 8px solid var(--primary-blue);
+            padding-right: 20px;
+        }
+
+        /* Grid Layout for Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid #334155;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-blue);
+        }
+
+        .project-card h3 {
+            color: var(--primary-blue);
+            margin-top: 0;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        .badge {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary-blue);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* Services List */
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .service-tag {
+            background: #0f172a;
+            border: 1px solid var(--primary-blue);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #0f172a;
+            margin-top: 60px;
+        }
+
+        .social-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="682685462_1304238815137566_5069150734480630627_n.jpg" alt="Mark Digital Logo">
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>MARK <span>DIGITAL</span></h1>
+        <p style="font-size: 1.5rem; color: var(--text-dim);">وكالة رقمية متكاملة تدمج بين استراتيجيات المبيعات، تحليل البيانات، والتصميم الإبداعي.</p>
+        
+        <div class="services-list">
+            <span class="service-tag">Media Buyer</span>
+            <span class="service-tag">Marketing Strategist</span>
+            <span class="service-tag">Copywriter</span>
+            <span class="service-tag">Graphic Designer</span>
+            <span class="service-tag">Video Editor</span>
+            <span class="service-tag">Data Analyst</span>
+            <span class="service-tag">E-commerce Specialist</span>
+        </div>
+    </section>
+
+    <section id="real-estate">
+        <h2 class="section-title">مشاريع <span>التسويق العقاري</span></h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <span class="badge">إدارة مبيعات</span>
+                <h3>Capital Home Real Estate</h3>
+                [cite_start]<p>إدارة عمليات مبيعات العقارات وتقديم استشارات استثمارية للعملاء لتحقيق الأهداف البيعية[cite: 446, 448].</p>
+            </div>
+            <div class="project-card">
+                <span class="badge">استراتيجية تسويق</span>
+                <h3>Manfaz Watanya Real Estate</h3>
+                [cite_start]<p>الترويج للمشاريع العقارية، إدارة استشارات العملاء، والمساعدة في إغلاق الصفقات البيعية الكبرى[cite: 452, 454].</p>
+            </div>
+            <div class="project-card">
+                <span class="badge">Lead Generation</span>
+                <h3>Mohamed Magdy Real Estate</h3>
+                [cite_start]<p>تنفيذ أنشطة ترويجية للمشاريع العقارية وزيادة قاعدة العملاء المحتملين[cite: 465, 467].</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ecommerce">
+        <h2 class="section-title">مشاريع <span>التجارة الإلكترونية</span></h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <span class="badge">Social Media Design</span>
+                <h3>براند MORE (Tech Hub)</h3>
+                [cite_start]<p>تصميم بوستات سوشيال ميديا ترويجية للأجهزة المنزلية والإلكترونية (Samsung, Beko, Fresh) مع التركيز على العروض والمواصفات[cite: 48, 55, 86, 92].</p>
+            </div>
+            <div class="project-card">
+                <span class="badge">Ads Management</span>
+                <h3>Mido El Mansoury (Mobile Store)</h3>
+                [cite_start]<p>إدارة الحملات الإعلانية وتصاميم السوشيال ميديا لمنتجات Realme, Oppo وخدمات Hotline[cite: 280, 294, 320].</p>
+            </div>
+            <div class="project-card">
+                <span class="badge">Brand Growth</span>
+                <h3>براند Fine Frame & Tofia</h3>
+                [cite_start]<p>إدارة عمليات البيع ودعم العملاء لضمان رضا المستهلك وتحقيق نمو في المبيعات[cite: 456, 461, 463].</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="creative">
+        <h2 class="section-title">الإنتاج <span>الإبداعي والميديا</span></h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <span class="badge">Social Media Content</span>
+                <h3>Code School</h3>
+                [cite_start]<p>صناعة محتوى مرئي إبداعي للمنصات التعليمية، يشمل مراجعات الطلاب وعروض الدورات التدريبية[cite: 146, 147, 164].</p>
+            </div>
+            <div class="project-card">
+                <span class="badge">Manipulation</span>
+                <h3>Cilantro & Tabasco</h3>
+                [cite_start]<p>تصاميم إبداعية وتلاعب بالصور (Photo Manipulation) لمنتجات الأغذية والمشروبات العالمية[cite: 357, 363, 368].</p>
+            </div>
+            <div class="project-card">
+                <span class="badge">Website Banners</span>
+                <h3>Black Friday Campaigns</h3>
+                [cite_start]<p>تصميم بنرات مواقع إلكترونية متكاملة لحملات البلاك فرايداي والخصومات الموسمية[cite: 185, 186, 204].</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <h2 class="section-title">إنجازاتنا <span>في أرقام</span></h2>
+        <div class="project-grid">
+            <div class="project-card" style="text-align: center;">
+                <h3 style="font-size: 2.5rem;">+120,000</h3>
+                [cite_start]<p>شخص تم الوصول إليهم عبر حملاتنا الإعلانية[cite: 488].</p>
+            </div>
+            <div class="project-card" style="text-align: center;">
+                <h3 style="font-size: 2.5rem;">+150</h3>
+                [cite_start]<p>عميل محتمل (Qualified Lead) تم توليدهم عبر استراتيجيات الاستهداف[cite: 488].</p>
+            </div>
+            <div class="project-card" style="text-align: center;">
+                <h3 style="font-size: 2.5rem;">35%</h3>
+                [cite_start]<p>زيادة في أداء الحملات وتحسين معدلات التحويل[cite: 132, 490].</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Mark Digital - جميع الحقوق محفوظة © 2026</p>
+        <div style="margin-top: 20px;">
+            <a href="https://www.facebook.com/markdigitalmarkdigi" class="social-link" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+            <span class="social-link"><i class="fas fa-phone"></i> 201029871397</span>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/201029871397" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
