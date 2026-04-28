@@ -3,132 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mark Digital - Portfolio & Landing Page</title>
+    <title>Mark Digital - الوكالة الرقمية المتكاملة</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --primary-blue: #3b82f6;
-            --dark-bg: #020617;
-            --card-bg: #1e293b;
-            --text-main: #f1f5f9;
-            --text-dim: #94a3b8;
+            --primary: #2563eb;
+            --secondary: #3b82f6;
+            --bg-body: #fdfdfd;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --whatsapp: #25d366;
+            --facebook: #1877f2;
+            --nav-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            background-color: var(--dark-bg);
+            background-color: var(--bg-body);
             color: var(--text-main);
             font-family: 'Noto Sans Arabic', sans-serif;
-            margin: 0;
+            line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        /* Header & Logo */
+        /* القائمة العلوية والهيدر */
         header {
-            padding: 40px 20px;
-            text-align: center;
-            background: linear-gradient(to bottom, #0f172a, var(--dark-bg));
+            background: var(--nav-bg);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        .logo-container img {
-            max-width: 250px;
-            height: auto;
-            margin-bottom: 20px;
+        .logo-area img {
+            height: 80px; /* الحجم المناسب للهيدر */
+            width: auto;
+            display: block;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
         }
 
         /* Hero Section */
         .hero {
-            padding: 60px 20px;
+            padding: 100px 5% 60px;
             text-align: center;
+            background: radial-gradient(circle at top right, #eff6ff, transparent);
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
         }
 
-        .hero h1 span { color: var(--primary-blue); }
-
-        /* Sections Styling */
-        section {
-            padding: 80px 10% 40px;
-            max-width: 1400px;
+        .hero p {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        h2.section-title {
-            font-size: 2.5rem;
+        /* الأقسام */
+        section {
+            padding: 80px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
             margin-bottom: 50px;
-            border-right: 8px solid var(--primary-blue);
-            padding-right: 20px;
         }
 
-        /* Grid Layout for Projects */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 25px;
-            border: 1px solid #334155;
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-blue);
-        }
-
-        .project-card h3 {
-            color: var(--primary-blue);
-            margin-top: 0;
-        }
-
-        .project-card p {
-            font-size: 0.95rem;
-            color: var(--text-dim);
-            line-height: 1.6;
-        }
-
-        .badge {
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--primary-blue);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            position: relative;
             display: inline-block;
-            margin-bottom: 10px;
+            padding-bottom: 10px;
         }
 
-        /* Services List */
-        .services-list {
+        .section-header h2::after {
+            content: '';
+            width: 50%;
+            height: 4px;
+            background: var(--primary);
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+        /* شبكة المشاريع */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 1px solid #edf2f7;
+            overflow: hidden;
+            transition: all 0.3s ease;
             display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
+            flex-direction: column;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: #f1f5f9;
+        }
+
+        .card-body {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .card-body h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .card-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* أزرار العمل */
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
             justify-content: center;
+            gap: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-wa { background-color: var(--whatsapp); color: white; }
+        .btn-fb { background-color: var(--facebook); color: white; }
+        .btn:hover { opacity: 0.85; }
+
+        /* تواصل معنا */
+        #contact {
+            background: #f1f5f9;
+            border-radius: 30px;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
             margin-top: 30px;
         }
 
-        .service-tag {
-            background: #0f172a;
-            border: 1px solid var(--primary-blue);
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: bold;
+        .contact-item {
+            font-size: 1.2rem;
+            font-weight: 500;
         }
 
-        /* WhatsApp Button */
-        .whatsapp-float {
+        /* WhatsApp Floating */
+        .wa-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: #25d366;
+            background: var(--whatsapp);
             color: white;
             width: 65px;
             height: 65px;
@@ -137,139 +231,138 @@
             justify-content: center;
             align-items: center;
             font-size: 35px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            z-index: 2000;
             text-decoration: none;
         }
 
         footer {
-            text-align: center;
             padding: 40px;
-            background: #0f172a;
-            margin-top: 60px;
+            text-align: center;
+            background: white;
+            border-top: 1px solid #edf2f7;
         }
 
-        .social-link {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-size: 1.2rem;
-            margin: 0 15px;
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 20px; }
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { gap: 15px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
+        <div class="logo-area">
             <img src="682685462_1304238815137566_5069150734480630627_n.jpg" alt="Mark Digital Logo">
         </div>
+        <nav>
+            <ul>
+                <li><a href="#home">الصفحة الرئيسية</a></li>
+                <li><a href="#projects">المشاريع الخاصة بنا</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="hero">
+    <section id="home" class="hero">
         <h1>MARK <span>DIGITAL</span></h1>
-        <p style="font-size: 1.5rem; color: var(--text-dim);">وكالة رقمية متكاملة تدمج بين استراتيجيات المبيعات، تحليل البيانات، والتصميم الإبداعي.</p>
+        <p>وكالة رقمية متكاملة لخدمات كتابة المحتوى، التصميم الإبداعي، إدارة المبيعات، والنمو الرقمي.</p>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">
+            <h2>أحدث أعمالنا</h2>
+        </div>
         
-        <div class="services-list">
-            <span class="service-tag">Media Buyer</span>
-            <span class="service-tag">Marketing Strategist</span>
-            <span class="service-tag">Copywriter</span>
-            <span class="service-tag">Graphic Designer</span>
-            <span class="service-tag">Video Editor</span>
-            <span class="service-tag">Data Analyst</span>
-            <span class="service-tag">E-commerce Specialist</span>
+        <div class="projects-grid">
+            
+            <!-- مشاريع آلاء أحمد -->
+            <div class="card">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/1362946500365317930" class="card-img" alt="">
+                <div class="card-body">
+                    <h3>Mido El Mansoury Mobile Store</h3>
+                    <p>تصميم هوية بصرية كاملة وإدارة منصات التواصل لبراند الهواتف مع التركيز على الأجهزة الحديثة (Realme, Oppo).</p>
+                    <div class="card-actions">
+                        <a href="https://wa.me/201029871397" class="btn btn-wa"><i class="fab fa-whatsapp"></i> اطلب الخدمة</a>
+                        <a href="https://www.facebook.com/markdigitalmarkdigi" class="btn btn-fb"><i class="fab fa-facebook"></i> فيسبوك</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/6097979708523099298" class="card-img" alt="">
+                <div class="card-body">
+                    <h3>Cilantro & Tabasco Campaign</h3>
+                    <p>حملات إبداعية تعتمد على التلاعب بالصور (Manipulation) للمشروبات والمنتجات الغذائية العالمية.</p>
+                    <div class="card-actions">
+                        <a href="https://wa.me/201029871397" class="btn btn-wa"><i class="fab fa-whatsapp"></i> اطلب الخدمة</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مشاريع محمد عبد الحي -->
+            <div class="card">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/10342399262128553097" class="card-img" alt="[Image of Creative Writing]">
+                <div class="card-body">
+                    <h3>صناعة السيناريو الإبداعي</h3>
+                    <p>كتابة نصوص إعلانية (Scripts) مبنية على سيكولوجية المستهلك لتحويل المتابعين إلى عملاء أوفياء.</p>
+                    <div class="card-actions">
+                        <a href="https://wa.me/201029871397" class="btn btn-wa"><i class="fab fa-whatsapp"></i> اطلب الخدمة</a>
+                        <a href="https://www.facebook.com/markdigitalmarkdigi" class="btn btn-fb"><i class="fab fa-facebook"></i> فيسبوك</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مشاريع عبد الرحمن علي -->
+            <div class="card">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/13293006289016518905" class="card-img" alt="[Image of Real Estate Campaign]">
+                <div class="card-body">
+                    <h3>التسويق العقاري (Capital Home)</h3>
+                    <p>إدارة مبيعات وتوليد عملاء محتملين لأكبر المشاريع العقارية في الشيخ زايد وأكتوبر مع تحقيق مستهدفات بيعية قياسية.</p>
+                    <div class="card-actions">
+                        <a href="https://wa.me/201029871397" class="btn btn-wa"><i class="fab fa-whatsapp"></i> اطلب الخدمة</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/8134741505262544792" class="card-img" alt="">
+                <div class="card-body">
+                    <h3>Code School Branding</h3>
+                    <p>إطلاق الهوية الرقمية لمنصات تعليم البرمجة وتصميم رحلة العميل من البداية وحتى التسجيل.</p>
+                    <div class="card-actions">
+                        <a href="https://wa.me/201029871397" class="btn btn-wa"><i class="fab fa-whatsapp"></i> اطلب الخدمة</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section id="real-estate">
-        <h2 class="section-title">مشاريع <span>التسويق العقاري</span></h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <span class="badge">إدارة مبيعات</span>
-                <h3>Capital Home Real Estate</h3>
-                [cite_start]<p>إدارة عمليات مبيعات العقارات وتقديم استشارات استثمارية للعملاء لتحقيق الأهداف البيعية[cite: 446, 448].</p>
+    <section id="contact">
+        <div class="section-header">
+            <h2>تواصل معنا الآن</h2>
+            <p>فريقنا مستعد لتحليل مشروعك وتقديم الاستشارة الأنسب لنمو علامتك التجارية.</p>
+        </div>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone" style="color: var(--primary);"></i> 201029871397+
             </div>
-            <div class="project-card">
-                <span class="badge">استراتيجية تسويق</span>
-                <h3>Manfaz Watanya Real Estate</h3>
-                [cite_start]<p>الترويج للمشاريع العقارية، إدارة استشارات العملاء، والمساعدة في إغلاق الصفقات البيعية الكبرى[cite: 452, 454].</p>
-            </div>
-            <div class="project-card">
-                <span class="badge">Lead Generation</span>
-                <h3>Mohamed Magdy Real Estate</h3>
-                [cite_start]<p>تنفيذ أنشطة ترويجية للمشاريع العقارية وزيادة قاعدة العملاء المحتملين[cite: 465, 467].</p>
+            <div class="contact-item">
+                <i class="fab fa-facebook" style="color: var(--facebook);"></i> markdigitalmarkdigi
             </div>
         </div>
-    </section>
-
-    <section id="ecommerce">
-        <h2 class="section-title">مشاريع <span>التجارة الإلكترونية</span></h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <span class="badge">Social Media Design</span>
-                <h3>براند MORE (Tech Hub)</h3>
-                [cite_start]<p>تصميم بوستات سوشيال ميديا ترويجية للأجهزة المنزلية والإلكترونية (Samsung, Beko, Fresh) مع التركيز على العروض والمواصفات[cite: 48, 55, 86, 92].</p>
-            </div>
-            <div class="project-card">
-                <span class="badge">Ads Management</span>
-                <h3>Mido El Mansoury (Mobile Store)</h3>
-                [cite_start]<p>إدارة الحملات الإعلانية وتصاميم السوشيال ميديا لمنتجات Realme, Oppo وخدمات Hotline[cite: 280, 294, 320].</p>
-            </div>
-            <div class="project-card">
-                <span class="badge">Brand Growth</span>
-                <h3>براند Fine Frame & Tofia</h3>
-                [cite_start]<p>إدارة عمليات البيع ودعم العملاء لضمان رضا المستهلك وتحقيق نمو في المبيعات[cite: 456, 461, 463].</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="creative">
-        <h2 class="section-title">الإنتاج <span>الإبداعي والميديا</span></h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <span class="badge">Social Media Content</span>
-                <h3>Code School</h3>
-                [cite_start]<p>صناعة محتوى مرئي إبداعي للمنصات التعليمية، يشمل مراجعات الطلاب وعروض الدورات التدريبية[cite: 146, 147, 164].</p>
-            </div>
-            <div class="project-card">
-                <span class="badge">Manipulation</span>
-                <h3>Cilantro & Tabasco</h3>
-                [cite_start]<p>تصاميم إبداعية وتلاعب بالصور (Photo Manipulation) لمنتجات الأغذية والمشروبات العالمية[cite: 357, 363, 368].</p>
-            </div>
-            <div class="project-card">
-                <span class="badge">Website Banners</span>
-                <h3>Black Friday Campaigns</h3>
-                [cite_start]<p>تصميم بنرات مواقع إلكترونية متكاملة لحملات البلاك فرايداي والخصومات الموسمية[cite: 185, 186, 204].</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="achievements">
-        <h2 class="section-title">إنجازاتنا <span>في أرقام</span></h2>
-        <div class="project-grid">
-            <div class="project-card" style="text-align: center;">
-                <h3 style="font-size: 2.5rem;">+120,000</h3>
-                [cite_start]<p>شخص تم الوصول إليهم عبر حملاتنا الإعلانية[cite: 488].</p>
-            </div>
-            <div class="project-card" style="text-align: center;">
-                <h3 style="font-size: 2.5rem;">+150</h3>
-                [cite_start]<p>عميل محتمل (Qualified Lead) تم توليدهم عبر استراتيجيات الاستهداف[cite: 488].</p>
-            </div>
-            <div class="project-card" style="text-align: center;">
-                <h3 style="font-size: 2.5rem;">35%</h3>
-                [cite_start]<p>زيادة في أداء الحملات وتحسين معدلات التحويل[cite: 132, 490].</p>
-            </div>
+        <div style="margin-top: 30px;">
+            <a href="https://wa.me/201029871397" style="background: var(--whatsapp); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block;">ارسل لنا رسالة مباشرة</a>
         </div>
     </section>
 
     <footer>
-        <p>Mark Digital - جميع الحقوق محفوظة © 2026</p>
-        <div style="margin-top: 20px;">
-            <a href="https://www.facebook.com/markdigitalmarkdigi" class="social-link" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-            <span class="social-link"><i class="fas fa-phone"></i> 201029871397</span>
-        </div>
+        <p>جميع الحقوق محفوظة لشركة Mark Digital © 2026</p>
     </footer>
 
-    <a href="https://wa.me/201029871397" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/201029871397" class="wa-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
